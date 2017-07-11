@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
-import { Button, Welcome } from '@storybook/react/demo'
 import WordMark from '../WordMark'
+import EnerguideLogo from '../EnerguideLogo'
 
 storiesOf('Welcome', module).add('GCUI', () =>
   <div>
@@ -42,5 +42,19 @@ storiesOf('WordMark', module).add('WordMark', () =>
       The colour of the text can be controlled wiht a text prop: &lt;WordMark text="#00F" /&gt;
     </p>
     <WordMark text="#00F" />
+  </div>
+)
+
+storiesOf('EnerguideLogo', module).add('EnerguideLogo', () =>
+  <div>
+    <p>This is the official logo of the NRCAN's Energuide program.</p>
+    <h3>Defaults</h3>
+    <p>With no props it defaults to 15em in width</p>
+    <EnerguideLogo />
+    <h4>props</h4>
+    <p>
+      Passing a width property looks like this: &lt;EnerguideLogo width="20em" /&gt;
+    </p>
+    <EnerguideLogo width="20em" />
   </div>
 )
