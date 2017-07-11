@@ -1,12 +1,28 @@
 {
-  "name": "gcui",
+  "name": "@cdssnc/gcui",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build": "babel --ignore node_modules,__tests__,stories --copy-files --out-dir dist/ src/",
+    "prepublish": "yarn test && yarn run build",
+    "publish": "npm publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gcdigital-gcnumerique/gcui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gcdigital-gcnumerique/gcui/issues"
+  },
+  "homepage": "https://github.com/gcdigital-gcnumerique/gcui",
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "@storybook/react": "^3.1.8",
     "babel-cli": "^6.24.1",
