@@ -2,9 +2,22 @@
 
 This is a project to collect the bits of UI code that CDS creates into a single place, ready to be reused.
 
+## Installation
+
+```sh
+yarn install @cdssnc/gcui
+```
+
+## Usage
+
+```javascript
+import { WordMark } from '@cdssnc/gcui'
+// Do something with <WordMark />
+```
+
 ## Seeing the components
 
-To explore the components in this project run the following commands:
+To explore the components and their documentation, run the following commands:
 
 ```sh
 git clone https://github.com/gcdigital-gcnumerique/gcui.git && cd gcui
