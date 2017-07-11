@@ -27,10 +27,20 @@ storiesOf('WordMark', module).add('WordMark', () =>
     <h3>Defaults</h3>
     <p>With no props it defaults to 10em in width</p>
     <WordMark />
-    <h3>props</h3>
+    <h4>props</h4>
     <p>
       Passing a width property looks like this: &lt;WordMark width="20em" /&gt;
     </p>
     <WordMark width="20em" />
+
+    <p>
+      The colour of the flag can be controlled wiht a flag prop: &lt;WordMark flag="#00F" /&gt;
+    </p>
+    <WordMark flag="#00F" />
+
+    <p>
+      The colour of the text can be controlled wiht a text prop: &lt;WordMark text="#00F" /&gt;
+    </p>
+    <WordMark text="#00F" />
   </div>
 )
