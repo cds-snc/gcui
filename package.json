@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gcdigital-gcnumerique/gcui.git"
+    "url": "https://github.com/cds-snc/gcui.git"
   },
   "bugs": {
-    "url": "https://github.com/gcdigital-gcnumerique/gcui/issues"
+    "url": "https://github.com/cds-snc/gcui/issues"
   },
-  "homepage": "https://github.com/gcdigital-gcnumerique/gcui",
+  "homepage": "https://github.com/cds-snc/gcui",
   "files": [
     "dist",
     "src"

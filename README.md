@@ -20,7 +20,7 @@ import { WordMark } from '@cdssnc/gcui'
 To explore the components and their documentation, run the following commands:
 
 ```sh
-git clone https://github.com/gcdigital-gcnumerique/gcui.git && cd gcui
+git clone https://github.com/cds-snc/gcui.git && cd gcui
 yarn
 yarn run storybook
 ```
