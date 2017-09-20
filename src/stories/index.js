@@ -7,6 +7,8 @@ import { linkTo } from '@storybook/addon-links'
 import WordMark from '../WordMark'
 import EnerguideLogo from '../EnerguideLogo'
 import GoCSignature from '../GoCSignature'
+import DownwardChevron from '../DownwardChevron'
+import UpwardChevron from '../UpwardChevron'
 
 storiesOf('Welcome', module).add('GCUI', () =>
   <div>
@@ -22,7 +24,7 @@ storiesOf('Welcome', module).add('GCUI', () =>
   </div>
 )
 
-storiesOf('WordMark', module).add('WordMark', () =>
+storiesOf('Logos', module).add('WordMark', () =>
   <div>
     <p>This is the official logo of the Canadian government</p>
     <h3>Defaults</h3>
@@ -46,7 +48,7 @@ storiesOf('WordMark', module).add('WordMark', () =>
   </div>
 )
 
-storiesOf('EnerguideLogo', module).add('EnerguideLogo', () =>
+storiesOf('Logos', module).add('EnerguideLogo', () =>
   <div>
     <p>This is the official logo of the NRCAN's Energuide program.</p>
     <h3>Defaults</h3>
@@ -60,7 +62,7 @@ storiesOf('EnerguideLogo', module).add('EnerguideLogo', () =>
   </div>
 )
 
-storiesOf('GoCSignature', module).add('GoCSignature', () =>
+storiesOf('Logos', module).add('GoCSignature', () =>
   <div>
     <p>This is the signature block used by the Government of Canada.</p>
     <h3>Defaults</h3>
@@ -80,5 +82,31 @@ storiesOf('GoCSignature', module).add('GoCSignature', () =>
       The colour of the text can be controlled with a text prop: &lt;GoCSignature text="#00F" /&gt;
     </p>
     <GoCSignature text="#00F" />
+  </div>
+)
+
+storiesOf('Icons', module).add('DownwardChevron', () =>
+  <div>
+    <p>This is a React version of the Fontawesome "chevron-down" icon.</p>
+    <h3>Defaults</h3>
+    <p>With no props it defaults to 1em in width and colour of white/#fff.</p>
+    <h4>props</h4>
+    <p>
+      The props it accepts are: &lt;DownwardChevron verticalPadding="2em" horizontalPadding="3em" colour="#000" width="10em" /&gt;
+    </p>
+    <DownwardChevron verticalPadding="2em" horizontalPadding="3em" width="10em" colour="#000" />
+  </div>
+)
+
+storiesOf('Icons', module).add('UpwardChevron', () =>
+  <div>
+    <p>This is a React version of the Fontawesome "chevron-up" icon.</p>
+    <h3>Defaults</h3>
+    <p>With no props it defaults to 1em in width and colour of white/#fff.</p>
+    <h4>props</h4>
+    <p>
+      The props it accepts are: &lt;UpwardChevron verticalPadding="2em" horizontalPadding="3em" colour="#000" width="10em" /&gt;
+    </p>
+    <UpwardChevron verticalPadding="2em" horizontalPadding="3em" width="10em" colour="#000" />
   </div>
 )

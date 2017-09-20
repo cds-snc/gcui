@@ -1,6 +1,14 @@
 # GCUI
 
 This is a project to collect the bits of UI code that CDS creates into a single place, ready to be reused.
+The list of components currently available are:
+
+* WordMark
+* EnerguideLogo
+* GoCSignature
+* DownwardChevron
+* UpwardChevron
+
 
 ## Installation
 
