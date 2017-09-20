@@ -8,6 +8,7 @@
     "test": "jest",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build": "babel --ignore node_modules,__tests__,stories --copy-files --out-dir dist/ src/",
+    "prepublish": "yarn build",
     "publish": "npm publish"
   },
   "repository": {
