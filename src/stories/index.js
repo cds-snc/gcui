@@ -9,6 +9,7 @@ import EnerguideLogo from '../EnerguideLogo'
 import GoCSignature from '../GoCSignature'
 import DownwardChevron from '../DownwardChevron'
 import UpwardChevron from '../UpwardChevron'
+import Button from '../Button'
 
 storiesOf('Welcome', module).add('GCUI', () =>
   <div>
@@ -108,5 +109,24 @@ storiesOf('Icons', module).add('UpwardChevron', () =>
       The props it accepts are: &lt;UpwardChevron verticalPadding="2em" horizontalPadding="3em" colour="#000" width="10em" /&gt;
     </p>
     <UpwardChevron verticalPadding="2em" horizontalPadding="3em" width="10em" colour="#000" />
+  </div>
+)
+
+storiesOf('Buttons', module).add('Button', () =>
+  <div>
+    <p>This is basic WET button.</p>
+    <h3>Defaults</h3>
+    <p>With no props it defaults to what is called a "default button"in the Web Experience Toolkit:</p>
+    <Button>submit</Button>
+    <h4>props</h4>
+    <p>
+      The only prop you can pass is whether or not this is a primary button: &lt;Button primary &gt;submit&lt;/Button primary &gt;
+    </p>
+    <Button primary>submit</Button>
+    <h4>Interaction</h4>
+    <p>
+      As with any React component, if you want to interaction you attach an event handler: &lt;Button primary onClick=&#123;action("clicked")&#125; &gt;submit&lt;/Button primary &gt;
+    </p>
+    <Button primary onClick={action('clicked')}>submit</Button>
   </div>
 )

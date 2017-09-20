@@ -8,6 +8,7 @@ The list of components currently available are:
 * GoCSignature
 * DownwardChevron
 * UpwardChevron
+* Button
 
 
 ## Installation
