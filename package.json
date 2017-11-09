@@ -35,15 +35,19 @@
     "enzyme": "^2.9.1",
     "enzyme-to-json": "^1.5.1",
     "jest": "^20.0.4",
+    "jest-glamor-react": "^3.2.1",
     "jest-styled-components": "^3.3.2",
     "react-test-renderer": "^15.6.1"
   },
   "dependencies": {
+    "emotion": "^8.0.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-emotion": "^8.0.10",
     "styled-components": "^2.1.1"
   },
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "snapshotSerializers": ["jest-glamor-react"]
   }
 }

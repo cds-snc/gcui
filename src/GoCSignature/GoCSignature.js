@@ -1,16 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'react-emotion'
 import PropTypes from 'prop-types'
 
-const FipFlag = styled.path`
+const FipFlag = styled('path')`
   fill: ${props => props.flag};
 `
 
-const FipText = styled.path`
+const FipText = styled('path')`
   fill: ${props => props.text};
 `
 
-const Wordmark = ({ width = '10em', flag = '#F00', text = '#000' }) =>
+const Wordmark = ({ width = '10em', flag = '#F00', text = '#000' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
@@ -30,6 +30,7 @@ const Wordmark = ({ width = '10em', flag = '#F00', text = '#000' }) =>
       />
     </g>
   </svg>
+)
 
 Wordmark.propTypes = {
   width: PropTypes.string,
