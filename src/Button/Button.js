@@ -1,7 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 
-const BasicButton = styled.button`
+const BasicButton = styled('button')`
   text-align: center;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
