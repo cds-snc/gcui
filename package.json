@@ -6,8 +6,10 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
+    "precommit": "lint-staged",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build": "babel --ignore node_modules,__tests__,stories --copy-files --out-dir dist/ src/",
+    "build":
+      "babel --ignore node_modules,__tests__,stories --copy-files --out-dir dist/ src/",
     "prepublish": "yarn build",
     "publish": "npm publish"
   },
@@ -19,10 +21,7 @@
     "url": "https://github.com/cds-snc/gcui/issues"
   },
   "homepage": "https://github.com/cds-snc/gcui",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "devDependencies": {
     "@storybook/react": "^3.1.8",
     "babel-cli": "^6.24.1",
@@ -46,9 +45,10 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
     "jest": "^20.0.4",
     "jest-styled-components": "^3.3.2",
-    "pre-commit": "^1.2.2",
+    "lint-staged": "^5.0.0",
     "prettier": "^1.8.1",
     "react-test-renderer": "^15.6.1"
   },
@@ -56,6 +56,12 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "styled-components": "^2.1.1"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": [
+      "prettier --trailing-comma=es5 --no-semi --write",
+      "git add"
+    ]
   },
   "jest": {
     "verbose": true
