@@ -1,13 +1,18 @@
 import React from 'react'
+import { sheet, flush } from 'emotion'
 import { mount, shallow } from 'enzyme'
-import 'jest-styled-components'
 import toJSON from 'enzyme-to-json'
 import DownwardChevron from '../../DownwardChevron'
 
+const stringify = stylesheet =>
+  stylesheet.tags.map(tag => tag.textContent || '').join('')
+
 describe('<DownwardChevron />', () => {
+  afterEach(() => flush())
+
   it('can be rendered', () => {
-    let wrapper = shallow(<DownwardChevron />)
-    expect(toJSON(wrapper)).toMatchSnapshot()
+    let wrapper = shallow(<DownwardChevron />).dive()
+    expect(wrapper.is('span')).toBeTruthy()
   })
 
   it('accepts a width prop', () => {
@@ -27,14 +32,14 @@ describe('<DownwardChevron />', () => {
   })
 
   it('allows the padding around the chevron to be set', () => {
-    let wrapper = shallow(
+    let wrapper = mount(
       <DownwardChevron verticalPadding="10vh" horizontalPadding="4em" />,
-    ).dive()
-    expect(toJSON(wrapper)).toHaveStyleRule('padding', '10vh 4em')
+    )
+    expect(stringify(sheet)).toMatch(/padding:10vh 4em/)
   })
 
   it('the padding has default values of 0.3em', () => {
-    let wrapper = shallow(<DownwardChevron />).dive()
-    expect(toJSON(wrapper)).toHaveStyleRule('padding', '0.3em 0.3em')
+    let wrapper = mount(<DownwardChevron />)
+    expect(stringify(sheet)).toMatch(/padding:0.3em 0.3em/)
   })
 })

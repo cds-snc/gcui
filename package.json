@@ -7,8 +7,7 @@
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build":
-      "babel --ignore node_modules,__tests__,stories --copy-files --out-dir dist/ src/",
+    "build": "babel --ignore node_modules,__tests__,stories --copy-files --out-dir dist/ src/",
     "prepublishOnly": "yarn build",
     "publish": "npm publish"
   },
@@ -20,12 +19,16 @@
     "url": "https://github.com/cds-snc/gcui/issues"
   },
   "homepage": "https://github.com/cds-snc/gcui",
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "@storybook/react": "^3.1.8",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.0",
+    "babel-plugin-emotion": "^8.0.11",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-preset-env": "^1.5.2",
@@ -38,14 +41,16 @@
     "react-test-renderer": "^15.6.1"
   },
   "dependencies": {
-    "emotion": "^8.0.10",
+    "emotion": "^8.0.11",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-emotion": "^8.0.10",
+    "react-emotion": "^8.0.11",
     "styled-components": "^2.1.1"
   },
   "jest": {
     "verbose": true,
-    "snapshotSerializers": ["jest-glamor-react"]
+    "snapshotSerializers": [
+      "jest-glamor-react"
+    ]
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import PropTypes from 'prop-types'
 
 const Rect = styled.rect`

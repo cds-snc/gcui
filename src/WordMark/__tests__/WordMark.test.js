@@ -1,10 +1,15 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import 'jest-styled-components'
+import { sheet, flush } from 'emotion'
 import toJSON from 'enzyme-to-json'
 import WordMark from '../../WordMark'
 
+const stringify = stylesheet =>
+  stylesheet.tags.map(tag => tag.textContent || '').join('')
+
 describe('<WordMark />', () => {
+  afterEach(() => flush())
+
   it('renders svg', () => {
     let wrapper = shallow(<WordMark />)
     expect(wrapper.is('svg')).toBeTruthy()
@@ -23,12 +28,12 @@ describe('<WordMark />', () => {
   it('allows the flag colour to be set', () => {
     let wrapper = mount(<WordMark flag="#fff" />)
     let flag = wrapper.find('.fipflag')
-    expect(flag).toHaveStyleRule('fill', '#fff')
+    expect(stringify(sheet)).toMatch(/fill:#fff/)
   })
 
   it('allows the text colour to be set', () => {
     let wrapper = mount(<WordMark text="#fff" />)
     let text = wrapper.find('.fiptext')
-    expect(text).toHaveStyleRule('fill', '#fff')
+    expect(stringify(sheet)).toMatch(/fill:#fff/)
   })
 })

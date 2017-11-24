@@ -1,4 +1,4 @@
 {
   "presets": ["env", "react"],
-  "plugins": ["transform-class-properties", "transform-export-extensions"]
+  "plugins": ["emotion", "transform-class-properties", "transform-export-extensions"]
 }
