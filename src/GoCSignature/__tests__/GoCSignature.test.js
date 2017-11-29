@@ -47,4 +47,18 @@ describe("<GoCSignature />", () => {
     let wrapper = mount(<GoCSignature text="mistyrose" />)
     expect(stringify(sheet)).toMatch(/fill:mistyrose/)
   })
+
+  it("outputs english text first by default", () => {
+    let wrapper = mount(<GoCSignature />)
+      .find("[data-fiptext]")
+      .first()
+    expect(wrapper.props().transform).toEqual("translate(0 0)") // no change
+  })
+
+  it("outputs french text first when passed lang='fr'", () => {
+    let wrapper = mount(<GoCSignature lang="fr" />)
+      .find("[data-fiptext]")
+      .first()
+    expect(wrapper.props().transform).toEqual("translate(317 0)")
+  })
 })
