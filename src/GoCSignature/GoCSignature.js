@@ -1,22 +1,23 @@
-import React from 'react'
-import styled, { css } from 'react-emotion'
-import PropTypes from 'prop-types'
+import React from "react"
+import styled from "react-emotion"
+import PropTypes from "prop-types"
 
-const FipFlag = styled('path')`
+const FipFlag = styled("path")`
   fill: ${props => props.flag};
 `
 
-const FipText = styled('path')`
+const FipText = styled("path")`
   fill: ${props => props.text};
 `
 
-const Wordmark = ({ width = '10em', flag = '#F00', text = '#000' }) => (
+const Wordmark = ({ width = "10em", flag = "#F00", text = "#000" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     width={width}
     viewBox="0 0 213 20"
-    preserveAspectRatio="xMinYMin meet">
+    preserveAspectRatio="xMinYMin meet"
+  >
     <g id="sig" transform="translate(-2,-2)">
       <FipFlag
         flag={flag}
