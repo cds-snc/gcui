@@ -8,6 +8,7 @@
     "test": "jest",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "lint": "eslint src/**",
     "build":
       "babel --ignore node_modules,__tests__,stories --copy-files --out-dir dist/ src/",
     "prepublishOnly": "yarn build",
