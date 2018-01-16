@@ -1,6 +1,10 @@
+import "raf/polyfill"
 import React from "react"
-import { shallow } from "enzyme"
+import { shallow, configure } from "enzyme"
 import EnerguideLogo from "../../EnerguideLogo"
+import Adapter from "enzyme-adapter-react-16"
+
+configure({ adapter: new Adapter() })
 
 describe("<EnerguideLogo />", () => {
   it("renders svg", () => {

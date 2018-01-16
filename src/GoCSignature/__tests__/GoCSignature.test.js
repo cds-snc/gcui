@@ -1,7 +1,11 @@
+import "raf/polyfill"
 import React from "react"
 import { sheet, flush } from "emotion"
-import { mount, shallow } from "enzyme"
+import { mount, shallow, configure } from "enzyme"
 import GoCSignature from "../../GoCSignature"
+import Adapter from "enzyme-adapter-react-16"
+
+configure({ adapter: new Adapter() })
 
 const stringify = stylesheet =>
   stylesheet.tags.map(tag => tag.textContent || "").join("")
