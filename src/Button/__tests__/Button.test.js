@@ -1,8 +1,7 @@
 import "raf/polyfill"
 import React from "react"
-import { mount, shallow, configure } from "enzyme"
+import { shallow, configure } from "enzyme"
 import { sheet, flush } from "emotion"
-import toJSON from "enzyme-to-json"
 import Button from "../../Button"
 import Adapter from "enzyme-adapter-react-16"
 
@@ -20,12 +19,12 @@ describe("<Button />", () => {
   })
 
   it("has a default background color", () => {
-    let button = shallow(<Button>submit</Button>).dive()
+    shallow(<Button>submit</Button>).dive()
     expect(stringify(sheet)).toMatch(/background-color:#eaebed/)
   })
 
   it("<Button primary /> has a different background-color", () => {
-    let button = shallow(<Button primary>submit</Button>).dive()
+    shallow(<Button primary>submit</Button>).dive()
     expect(stringify(sheet)).toMatch(/background-color:#335075/)
   })
 })

@@ -2,7 +2,6 @@ import "raf/polyfill"
 import React from "react"
 import { sheet, flush } from "emotion"
 import { mount, shallow, configure } from "enzyme"
-import toJSON from "enzyme-to-json"
 import DownwardChevron from "../../DownwardChevron"
 import Adapter from "enzyme-adapter-react-16"
 
@@ -36,14 +35,12 @@ describe("<DownwardChevron />", () => {
   })
 
   it("allows the padding around the chevron to be set", () => {
-    let wrapper = mount(
-      <DownwardChevron verticalPadding="10vh" horizontalPadding="4em" />
-    )
+    mount(<DownwardChevron verticalPadding="10vh" horizontalPadding="4em" />)
     expect(stringify(sheet)).toMatch(/padding:10vh 4em/)
   })
 
   it("the padding has default values of 0.3em", () => {
-    let wrapper = mount(<DownwardChevron />)
+    mount(<DownwardChevron />)
     expect(stringify(sheet)).toMatch(/padding:0.3em 0.3em/)
   })
 })

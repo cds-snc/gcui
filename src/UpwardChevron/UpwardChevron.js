@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Padding from '../Padding'
+import React from "react"
+import PropTypes from "prop-types"
+import Padding from "../Padding"
 
 const UpwardChevron = ({
-  width = '0.7em',
-  colour = '#FFF',
-  verticalPadding = '0.3em',
-  horizontalPadding = '0.3em',
+  width = "0.7em",
+  colour = "#FFF",
+  verticalPadding = "0.3em",
+  horizontalPadding = "0.3em",
 }) => (
   <Padding vertical={verticalPadding} horizontal={horizontalPadding}>
     <svg
@@ -16,7 +16,8 @@ const UpwardChevron = ({
       height="100%"
       viewBox="0 0 5.1385611 3.2992621"
       preserveAspectRatio="xMinYMin meet"
-      aria-label="upward chevron">
+      aria-label="upward chevron"
+    >
       <g transform="matrix(0.39946474,0,0,0.39946474,0.53101811,2.4482309)">
         <path
           style={{ fill: colour }}
