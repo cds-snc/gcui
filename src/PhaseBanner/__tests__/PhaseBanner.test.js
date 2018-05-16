@@ -1,8 +1,12 @@
 import 'raf/polyfill'
 import React from 'react'
+import { sheet, flush } from 'emotion'
 import { shallow, mount, configure } from 'enzyme'
 import { PhaseBanner } from '../../PhaseBanner'
 import Adapter from 'enzyme-adapter-react-16'
+
+const stringify = stylesheet =>
+  stylesheet.tags.map(tag => tag.textContent || '').join('')
 
 configure({ adapter: new Adapter() })
 
@@ -12,6 +16,17 @@ describe('<PhaseBanner />', () => {
       let wrapper = mount(<PhaseBanner alpha>under development</PhaseBanner>)
       expect(wrapper.text()).toMatch(/ALPHA/)
       expect(wrapper.text()).toMatch(/under development/)
+    })
+  })
+
+  describe('when passed the padding prop', () => {
+    it('uses the padding', () => {
+      let wrapper = mount(
+        <PhaseBanner alpha padding="100vw">
+          under development
+        </PhaseBanner>
+      )
+      expect(stringify(sheet)).toMatch(/padding:100vw/)
     })
   })
 

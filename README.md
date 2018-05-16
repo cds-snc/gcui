@@ -1,15 +1,6 @@
 # GCUI
 
 This is a project to collect the bits of UI code that CDS creates into a single place, ready to be reused.
-The list of components currently available are:
-
-* WordMark
-* EnerguideLogo
-* GoCSignature
-* DownwardChevron
-* UpwardChevron
-* Button
-
 
 ## Installation
 
@@ -20,7 +11,17 @@ yarn install @cdssnc/gcui
 ## Usage
 
 ```javascript
-import { WordMark } from '@cdssnc/gcui'
+import {
+	WordMark
+	EnerguideLogo,
+	GoCSignature,
+	DownwardChevron,
+	UpwardChevron,
+	PhaseBadge,
+	PhaseBanner,
+	Button,
+ } from '@cdssnc/gcui'
+
 // Do something with <WordMark />
 ```
 
