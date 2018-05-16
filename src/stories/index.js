@@ -1,15 +1,16 @@
-import React from "react"
+import React from 'react'
 
-import { storiesOf } from "@storybook/react"
-import { action } from "@storybook/addon-actions"
-import WordMark from "../WordMark"
-import EnerguideLogo from "../EnerguideLogo"
-import GoCSignature from "../GoCSignature"
-import DownwardChevron from "../DownwardChevron"
-import UpwardChevron from "../UpwardChevron"
-import Button from "../Button"
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import WordMark from '../WordMark'
+import EnerguideLogo from '../EnerguideLogo'
+import GoCSignature from '../GoCSignature'
+import { PhaseBanner } from '../PhaseBanner'
+import DownwardChevron from '../DownwardChevron'
+import UpwardChevron from '../UpwardChevron'
+import Button from '../Button'
 
-storiesOf("Welcome", module).add("GCUI", () => (
+storiesOf('Welcome', module).add('GCUI', () => (
   <div>
     <h2>GC UI</h2>
     <p>
@@ -23,7 +24,7 @@ storiesOf("Welcome", module).add("GCUI", () => (
   </div>
 ))
 
-storiesOf("Logos", module).add("WordMark", () => (
+storiesOf('Logos', module).add('WordMark', () => (
   <div>
     <p>This is the official logo of the Canadian government</p>
     <h3>Defaults</h3>
@@ -50,7 +51,7 @@ storiesOf("Logos", module).add("WordMark", () => (
   </div>
 ))
 
-storiesOf("Logos", module).add("EnerguideLogo", () => (
+storiesOf('Logos', module).add('EnerguideLogo', () => (
   <div>
     <p>This is the official logo of the NRCAN&apos;s Energuide program.</p>
     <h3>Defaults</h3>
@@ -65,7 +66,7 @@ storiesOf("Logos", module).add("EnerguideLogo", () => (
   </div>
 ))
 
-storiesOf("Logos", module).add("GoCSignature", () => (
+storiesOf('Logos', module).add('GoCSignature', () => (
   <div>
     <p>This is the signature block used by the Government of Canada.</p>
     <h3>Defaults</h3>
@@ -97,7 +98,7 @@ storiesOf("Logos", module).add("GoCSignature", () => (
   </div>
 ))
 
-storiesOf("Icons", module).add("DownwardChevron", () => (
+storiesOf('Icons', module).add('DownwardChevron', () => (
   <div>
     <p>
       This is a React version of the Fontawesome &quot;chevron-down &quot;icon.
@@ -119,7 +120,7 @@ storiesOf("Icons", module).add("DownwardChevron", () => (
   </div>
 ))
 
-storiesOf("Icons", module).add("UpwardChevron", () => (
+storiesOf('Icons', module).add('UpwardChevron', () => (
   <div>
     <p>
       This is a React version of the Fontawesome &quot;chevron-up&quot; icon.
@@ -141,7 +142,31 @@ storiesOf("Icons", module).add("UpwardChevron", () => (
   </div>
 ))
 
-storiesOf("Buttons", module).add("Button", () => (
+storiesOf('Elements', module).add('PhaseBanner', () => (
+  <div>
+    <p>
+      This is a banner to announce the software development phase the web
+      application is in.
+    </p>
+    <h3>Usage</h3>
+    <p>
+      Usage is simple, if you want an alpha banner, pass the alpha prop: <br />
+      &lt;PhaseBanner alpha &gt;This is a new service we are constantly
+      improving.&lt;/PhaseBanner&gt;
+    </p>
+    <PhaseBanner alpha>
+      This is a new service we are constantly improving.
+    </PhaseBanner>
+    <p>
+      Getting a beta banner is the same: <br />
+      &lt;PhaseBanner beta &gt; This service is getting pretty good!
+      &lt;/PhaseBanner&gt;
+    </p>
+    <PhaseBanner beta>This service is getting pretty good!</PhaseBanner>
+  </div>
+))
+
+storiesOf('Buttons', module).add('Button', () => (
   <div>
     <p>This is basic WET button.</p>
     <h3>Defaults</h3>
@@ -163,7 +188,7 @@ storiesOf("Buttons", module).add("Button", () => (
       onClick=&#123;action(c&quot;licked&quot;)&#125; &gt;submit&lt;/Button
       primary &gt;
     </p>
-    <Button primary onClick={action("clicked")}>
+    <Button primary onClick={action('clicked')}>
       submit
     </Button>
   </div>
