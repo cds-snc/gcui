@@ -25,15 +25,11 @@ const mediaQuery = Object.keys(breakpoints).reduce((accumulator, label) => {
   return accumulator
 }, {})
 
-const Banner = styled.div`
+const Banner = styled.aside`
   background-color: #000;
   color: #fff;
-  padding-left: 1.602rem;
-  padding-right: 1.602rem;
-  padding-top: 12px;
-  padding-bottom: 0.833rem;
-  font-size: 0.694rem;
-  font-family: sans-serif;
+  padding: ${props => props.padding};
+  font: 0.694rem sans-serif;
   ${mediaQuery.small(css`
     padding-left: 2rem;
     padding-right: 2rem;
@@ -42,8 +38,6 @@ const Banner = styled.div`
 `
 
 const message = css`
-  position: relative;
-  display: inline-block;
   bottom: 2px;
   font-weight: 600;
   ${mediaQuery.small(css`
@@ -61,11 +55,16 @@ const alphaBetaCheck = (props, propName, componentName) => {
   }
 }
 
-export const PhaseBanner = ({ alpha = false, beta = false, children }) => (
-  <Banner>
+export const PhaseBanner = ({
+  padding = '12px 4.5rem 0.5rem 4.5rem',
+  alpha = false,
+  beta = false,
+  children,
+}) => (
+  <Banner padding={padding}>
     {alpha && <PhaseBadge phase="alpha" />}
     {beta && <PhaseBadge phase="beta" />}
-    <div className={message}>{children}</div>
+    <span className={message}>{children}</span>
   </Banner>
 )
 
@@ -73,4 +72,5 @@ PhaseBanner.propTypes = {
   children: PropTypes.any.isRequired,
   alpha: alphaBetaCheck,
   beta: alphaBetaCheck,
+  padding: PropTypes.string,
 }
