@@ -10,8 +10,8 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "lint": "eslint src/**",
     "build":
-      "babel --ignore node_modules,__tests__,stories --copy-files --out-dir dist/ src/",
-    "prepublishOnly": "npm run build",
+      "NODE_ENV=production BABEL_ENV=production babel --ignore node_modules,__tests__,stories --copy-files --out-dir dist/ src/",
+    "prepare": "npm run build",
     "publish": "npm publish"
   },
   "repository": {
