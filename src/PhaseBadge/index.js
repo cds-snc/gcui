@@ -1,30 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { css } from 'react-emotion'
+import styled from 'react-emotion'
 
-const badge = css`
+const Badge = styled.span`
   line-height: 1.8;
   color: #fff;
-  padding: 2px 1rem;
-  margin-right: 1rem;
-  border-radius: 2px;
-  position: relative;
-  display: inline-block;
-  bottom: 2px;
+  padding: 0.45em 1em;
+  border-radius: 0.2em;
+  background-color: ${props =>
+    props.phase === 'alpha' ? '#e8026e' : '#ff5a02'};
 `
-
-const alpha = css`
-  background-color: rgb(232, 2, 110);
-`
-
-const beta = css`
-  background-color: #ff5a02;
-`
-
-export const PhaseBadge = ({ phase }) => (
-  <div className={`${badge} ${phase === 'alpha' ? alpha : beta}`}>
+export const PhaseBadge = ({ phase, ...rest }) => (
+  <Badge {...rest} phase={phase}>
     {phase.toUpperCase()}
-  </div>
+  </Badge>
 )
 
 PhaseBadge.propTypes = {
