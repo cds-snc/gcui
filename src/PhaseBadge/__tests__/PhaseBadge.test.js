@@ -1,10 +1,6 @@
-import 'raf/polyfill'
 import React from 'react'
-import { shallow, configure } from 'enzyme'
+import { shallow } from 'enzyme'
 import { PhaseBadge } from '../../PhaseBadge'
-import Adapter from 'enzyme-adapter-react-16'
-
-configure({ adapter: new Adapter() })
 
 describe('<PhaseBadge />', () => {
   describe('when phase == "alpha"', () => {

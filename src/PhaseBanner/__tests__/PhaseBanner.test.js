@@ -1,15 +1,11 @@
-import 'raf/polyfill'
 import React from 'react'
 import { sheet, flush } from 'emotion'
 import styled from 'react-emotion'
-import { shallow, mount, configure } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { PhaseBanner } from '../../PhaseBanner'
-import Adapter from 'enzyme-adapter-react-16'
 
 const stringify = stylesheet =>
   stylesheet.tags.map(tag => tag.textContent || '').join('')
-
-configure({ adapter: new Adapter() })
 
 describe('<PhaseBanner />', () => {
   describe('when passed the alpha prop', () => {
