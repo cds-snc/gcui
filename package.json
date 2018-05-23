@@ -1,6 +1,6 @@
 {
   "name": "@cdssnc/gcui",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "license": "MIT",
