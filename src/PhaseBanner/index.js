@@ -4,13 +4,13 @@ import styled, { css } from 'react-emotion'
 import { PhaseBadge } from '../PhaseBadge'
 
 const breakpoints = {
-  xs: 28,
-  small: 32,
+  xs: 481,
+  small: 578,
 }
 
 const mediaQuery = Object.keys(breakpoints).reduce((accumulator, label) => {
   let prefix = typeof breakpoints[label] === 'string' ? '' : 'max-width:'
-  let suffix = typeof breakpoints[label] === 'string' ? '' : 'em'
+  let suffix = typeof breakpoints[label] === 'string' ? '' : 'px'
   accumulator[label] = cls =>
     css`
       @media screen and (${prefix + breakpoints[label] + suffix}) {
@@ -25,7 +25,7 @@ const Banner = styled.aside`
   display: -ms-flexbox;
   align-items: center;
   -ms-flex-align: center;
-  padding: 0.6rem 4.5rem 0.5rem 4.5rem;
+  padding: 0.75rem 4.5rem;
   min-width: 20em;
   background-color: #000;
   color: #fff;
@@ -34,7 +34,6 @@ const Banner = styled.aside`
     display: block;
     padding-left: 2rem;
     padding-right: 2rem;
-    font-size: 0.694rem;
   `)};
 `
 
@@ -44,7 +43,7 @@ const message = css`
   ${mediaQuery.small(css`
     margin-left: 0;
     display: flex;
-    padding-top: 0.4em;
+    padding-top: 0.9em;
     font-weight: 400;
   `)};
 `
