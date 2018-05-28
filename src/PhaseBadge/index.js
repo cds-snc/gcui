@@ -8,7 +8,7 @@ const Badge = styled.span`
   border-radius: 0.2em;
   background-color: ${props =>
     props.phase === 'alpha' ? '#e8026e' : '#ff5a02'};
-  padding: 0.45rem 1rem;
+  padding: 0.23rem 1rem;
 `
 export const PhaseBadge = ({ phase, ...rest }) => (
   <Badge {...rest} phase={phase}>
