@@ -2,23 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'react-emotion'
 import { PhaseBadge } from '../PhaseBadge'
-
-const breakpoints = {
-  xs: 481,
-  small: 578,
-}
-
-const mediaQuery = Object.keys(breakpoints).reduce((accumulator, label) => {
-  let prefix = typeof breakpoints[label] === 'string' ? '' : 'max-width:'
-  let suffix = typeof breakpoints[label] === 'string' ? '' : 'px'
-  accumulator[label] = cls =>
-    css`
-      @media screen and (${prefix + breakpoints[label] + suffix}) {
-        ${cls};
-      }
-    `
-  return accumulator
-}, {})
+import { mediaQuery } from '../utils'
 
 const Banner = styled.aside`
   display: flex;
