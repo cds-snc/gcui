@@ -5,6 +5,7 @@ import WordMark from '../WordMark'
 import EnerguideLogo from '../EnerguideLogo'
 import GoCSignature from '../GoCSignature'
 import { PhaseBanner } from '../PhaseBanner'
+import { ErrorBoundary } from '../ErrorBoundary'
 import DownwardChevron from '../DownwardChevron'
 import UpwardChevron from '../UpwardChevron'
 import Button from '../Button'
@@ -190,5 +191,69 @@ storiesOf('Buttons', module).add('Button', () => (
     <Button primary onClick={action('clicked')}>
       submit
     </Button>
+  </div>
+))
+
+const ProblemChild = ({ blowup }) => {
+  if (blowup) {
+    throw new Error('💩')
+  } else {
+    return <p>This is fine</p>
+  }
+}
+
+class Demo extends React.Component {
+  constructor() {
+    super()
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  state = {
+    showError: false,
+  }
+
+  handleClick() {
+    this.setState({
+      showError: !this.state.showError,
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>Click to generate an error</button>
+        <ErrorBoundary onError={action} render={() => <p>Oops!</p>}>
+          <ProblemChild blowup={this.state.showError} />
+        </ErrorBoundary>
+      </div>
+    )
+  }
+}
+
+storiesOf('Utilities', module).add('ErrorBoundary', () => (
+  <div>
+    <h3>ErrorBoundary</h3>
+    <p>
+      This is an implementation of the Error Boundary feature added in React 16.
+      Add this to your application somewhere above the component(s) that may
+      generate an error.
+    </p>
+    <h4>props</h4>
+    <p>
+      The onError function will be called with the Error so that it can be
+      logged.
+    </p>
+    <p>
+      The return value of the render function will be displayed to the user in
+      the event of an error.
+    </p>
+    <p>
+      &lt;ErrorBoundary onError=&#123;handleError&#125; render=&#123;&#40;&#41;
+      =&gt; &lt;p&gt;Oops!&lt;/p&gt;&#125;&gt; &lt;MisbehavingChild /&gt;
+      &lt;/ErrorBoundary&gt;
+    </p>
+
+    <p>Clicking the button below should display Oops!</p>
+    <Demo />
   </div>
 ))
