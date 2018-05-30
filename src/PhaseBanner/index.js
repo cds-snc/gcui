@@ -9,15 +9,15 @@ const Banner = styled.aside`
   display: -ms-flexbox;
   align-items: center;
   -ms-flex-align: center;
-  padding: 0.75rem 4.5rem;
+  padding: 0.75rem 4.5rem 0.75rem 4.5rem;
   min-width: 20em;
   background-color: #000;
   color: #fff;
   font: 0.694rem sans-serif;
   ${mediaQuery.small(css`
     display: block;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1.44rem;
+    padding-right: 1.44rem;
   `)};
 `
 
