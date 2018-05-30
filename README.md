@@ -24,6 +24,7 @@ import {
 	PhaseBadge,
 	PhaseBanner,
 	Button,
+	ErrorBoundary,
  } from '@cdssnc/gcui'
 
 // Do something with <WordMark />
