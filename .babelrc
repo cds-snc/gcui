@@ -1,16 +1,5 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": [">0.25%", "ie 11", "not op_mini all"]
-        },
-        "useBuiltIns": true
-      }
-    ],
-    "react"
-  ],
+  "presets": ["env", "react"],
   "plugins": [
     "emotion",
     "transform-class-properties",
