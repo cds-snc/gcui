@@ -16,8 +16,7 @@ const Banner = styled.aside`
   font: 0.694rem sans-serif;
   ${mediaQuery.small(css`
     display: block;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 0.75rem 1.44rem;
   `)};
 `
 
