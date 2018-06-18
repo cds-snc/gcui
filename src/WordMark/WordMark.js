@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "react-emotion"
-import PropTypes from "prop-types"
+import React from 'react'
+import styled from 'react-emotion'
+import PropTypes from 'prop-types'
 
 const FipFlag = styled.path`
   fill: ${props => props.flag};
@@ -10,15 +10,16 @@ const FipText = styled.path`
   fill: ${props => props.text};
 `
 
-const Wordmark = ({ width = "10em", flag = "#F00", text = "#000" }) => (
+const Wordmark = ({ width = '10em', flag = '#F00', text = '#000' }) => (
   <svg
+    role="img"
+    aria-label="Symbol of the Government of Canada / Symbole du gouvernement du Canada"
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     width={width}
     height="100%"
     viewBox="0 0 143 34"
     preserveAspectRatio="xMinYMin meet"
-    aria-label="Symbol of the Government of Canada"
   >
     <g id="wmms" transform="translate(-1, -1)">
       <FipFlag
