@@ -10,10 +10,19 @@ const FipText = styled.path`
   fill: ${props => props.text};
 `
 
-const Wordmark = ({ width = '10em', flag = '#F00', text = '#000' }) => (
+const Wordmark = ({
+  width = '10em',
+  flag = '#F00',
+  text = '#000',
+  lang = 'en',
+}) => (
   <svg
     role="img"
-    aria-label="Symbol of the Government of Canada / Symbole du gouvernement du Canada"
+    aria-label={
+      lang === 'en'
+        ? 'Symbol of the Government of Canada'
+        : 'Symbole du gouvernement du Canada'
+    }
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     width={width}
@@ -40,6 +49,7 @@ Wordmark.propTypes = {
   width: PropTypes.string,
   flag: PropTypes.string,
   text: PropTypes.string,
+  lang: PropTypes.string,
 }
 
 export default Wordmark

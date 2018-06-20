@@ -19,7 +19,9 @@ const Wordmark = ({
 }) => (
   <svg
     role="img"
-    aria-label="Government of Canada / Gouvernement du Canada"
+    aria-label={
+      lang === 'en' ? 'Government of Canada' : 'Gouvernement du Canada'
+    }
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     width={width}
