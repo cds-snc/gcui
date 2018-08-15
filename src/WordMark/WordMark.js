@@ -15,6 +15,7 @@ const Wordmark = ({
   flag = '#F00',
   text = '#000',
   lang = 'en',
+  ...props
 }) => (
   <svg
     role="img"
@@ -29,6 +30,7 @@ const Wordmark = ({
     height="100%"
     viewBox="0 0 143 34"
     preserveAspectRatio="xMinYMin meet"
+    {...props}
   >
     <g id="wmms" transform="translate(-1, -1)">
       <FipFlag

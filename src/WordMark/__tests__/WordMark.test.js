@@ -33,4 +33,10 @@ describe('<WordMark />', () => {
     mount(<WordMark text="#ddd" />)
     expect(stringify(sheet)).toMatch(/fill:#ddd/)
   })
+
+  it('allows passing through abritrary props', () => {
+    let wrapper = shallow(<WordMark focusable="false" whizz="bang" />)
+    expect(wrapper.props().focusable).toEqual('false')
+    expect(wrapper.props().whizz).toEqual('bang')
+  })
 })

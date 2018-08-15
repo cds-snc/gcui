@@ -61,4 +61,10 @@ describe('<GoCSignature />', () => {
       .first()
     expect(wrapper.props().transform).toEqual('translate(317 0)')
   })
+
+  it('allows passing through abritrary props', () => {
+    let wrapper = shallow(<GoCSignature focusable="false" whizz="bang" />)
+    expect(wrapper.props().focusable).toEqual('false')
+    expect(wrapper.props().whizz).toEqual('bang')
+  })
 })

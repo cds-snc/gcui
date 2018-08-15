@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "react-emotion"
-import PropTypes from "prop-types"
+import React from 'react'
+import styled from 'react-emotion'
+import PropTypes from 'prop-types'
 
 const Rect = styled.rect`
   fill: #000;
@@ -10,7 +10,7 @@ const LogoText = styled.path`
   fill: #fff;
 `
 
-const EnerguideLogo = ({ width = "15em" }) => (
+const EnerguideLogo = ({ width = '15em', ...props }) => (
   <svg
     role="img"
     aria-label="Energuide"
@@ -19,6 +19,7 @@ const EnerguideLogo = ({ width = "15em" }) => (
     viewBox="0 0 176.06615 50.069547"
     width={width}
     preserveAspectRatio="xMinYMin"
+    {...props}
   >
     <title>Energuide</title>
     <desc>Energuide Logo</desc>
