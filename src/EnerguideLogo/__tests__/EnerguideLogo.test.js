@@ -17,4 +17,10 @@ describe('<EnerguideLogo />', () => {
     let wrapper = shallow(<EnerguideLogo />)
     expect(wrapper.props().width).toEqual('15em')
   })
+
+  it('allows passing through abritrary props', () => {
+    let wrapper = shallow(<EnerguideLogo focusable="false" whizz="bang" />)
+    expect(wrapper.props().focusable).toEqual('false')
+    expect(wrapper.props().whizz).toEqual('bang')
+  })
 })
